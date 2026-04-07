@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scholarship – Gobble Doggs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { red: '#c0392b', dark: '#1a1a1a', gold: '#d4a017', cream: '#faf6f0' },
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Lato', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Lato', sans-serif; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#c0392b; transition:width .3s; }
+    .nav-link:hover::after { width:100%; }
+    .nav-link { position:relative; }
+    .dropdown:hover .dropdown-menu { display:block; }
+  </style>
+</head>
+<body class="bg-brand-cream text-brand-dark">
+
+  <!-- NAV -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="./img/small.png" alt="Gobble Doggs Logo" class="h-14 w-auto"/>
+      </a>
+      <ul class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest font-bold text-brand-dark">
+        <li><a href="about.html" class="nav-link hover:text-brand-red transition-colors">About Us</a></li>
+        <li class="dropdown relative">
+          <a href="menus.html" class="nav-link hover:text-brand-red transition-colors flex items-center gap-1">Menus <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg></a>
+          <ul class="dropdown-menu hidden absolute top-full left-0 bg-white shadow-xl rounded-md min-w-max py-2 border-t-2 border-brand-red">
+            <li><a href="menus.html" class="block px-5 py-2 text-sm hover:bg-brand-red hover:text-white transition-colors">Al a Carte Menu</a></li>
+            <li><a href="menus.html#catering" class="block px-5 py-2 text-sm hover:bg-brand-red hover:text-white transition-colors">Catering Menu</a></li>
+          </ul>
+        </li>
+        <li><a href="party-packages.html" class="nav-link hover:text-brand-red transition-colors">Party Packages</a></li>
+        <li><a href="scholarship.html" class="nav-link text-brand-red">Scholarship</a></li>
+        <li><a href="media.html" class="nav-link hover:text-brand-red transition-colors">Media</a></li>
+        <li><a href="contact.html" class="nav-link hover:text-brand-red transition-colors">Contact</a></li>
+      </ul>
+      <button id="menu-btn" class="md:hidden p-2 rounded" aria-label="Open menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 pb-4">
+      <ul class="flex flex-col gap-4 pt-4 text-sm uppercase tracking-widest font-bold text-brand-dark">
+        <li><a href="about.html" class="hover:text-brand-red">About Us</a></li>
+        <li><a href="menus.html" class="hover:text-brand-red">Al a Carte Menu</a></li>
+        <li><a href="menus.html#catering" class="hover:text-brand-red">Catering Menu</a></li>
+        <li><a href="party-packages.html" class="hover:text-brand-red">Party Packages</a></li>
+        <li><a href="scholarship.html" class="text-brand-red">Scholarship</a></li>
+        <li><a href="media.html" class="hover:text-brand-red">Media</a></li>
+        <li><a href="contact.html" class="hover:text-brand-red">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="relative bg-brand-dark text-white py-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-30" style="background-image:url('./img/scholarship-photo-3.jpg'); background-size:cover; background-position:center top;"></div>
+    <div class="relative z-10 text-center max-w-3xl mx-auto px-6">
+      <p class="text-brand-gold uppercase tracking-[.3em] text-xs font-bold mb-3">Giving Back to the Community</p>
+      <h1 class="font-display text-5xl md:text-6xl font-black drop-shadow-lg">Gobble Doggs Scholarship</h1>
+    </div>
+  </section>
+  <div class="h-1 bg-gradient-to-r from-brand-red via-brand-gold to-brand-red"></div>
+
+  <!-- SCHOLARSHIP CONTENT -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <!-- Intro Banner -->
+      <div class="bg-brand-red text-white rounded-2xl p-8 mb-14 text-center shadow-lg">
+        <p class="text-2xl font-display font-bold mb-2">2025 Scholarship Now Open!</p>
+        <p class="text-red-100 text-sm">Applications must be postmarked no later than <strong class="text-white">Friday, June 12, 2026</strong>.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="md:col-span-2 space-y-6 text-gray-700 leading-relaxed">
+          <p>
+            Gobble Doggs is happy to announce its 2025 Gobble Doggs Scholarship application is open. A Gobble Doggs scholarship will be offered to at least one scholarship recipient that will assist a student in their educational and/or entrepreneurial goals.
+          </p>
+
+          <div class="bg-brand-cream border-l-4 border-brand-red rounded-r-xl px-6 py-5">
+            <p class="font-bold text-brand-dark uppercase tracking-wide text-sm">Important Note:</p>
+            <p class="mt-2 text-gray-700">You do not have to attend a college or university to apply for the Gobble Doggs Scholarship. The scholarship can be used for educational support, advancing an existing business, or developing a business concept. In other words, if you cut or braid hair on the side, cut lawns, type papers, walk dogs, etc., you can apply for the scholarship to assist in your entrepreneurial goals.</p>
+          </div>
+
+          <p>
+            The Gobble Doggs scholarship will be awarded to an African American graduating high school senior who is innovative, forward-thinking, has a passion for business and entrepreneurship. Today, we see more students seeking opportunities to minimize their college debt. Some may opt not to attend college at all but pursue a trade and/or start their own business.
+          </p>
+          <p>
+            We certainly want to encourage entrepreneurship in any capacity by giving a student funds to assist in pursuing their lifelong dream.
+          </p>
+          <p>
+            Gobble Doggs is based in the Chicagoland area and is a family-owned business, serving delicious gourmet turkey and vegan hot dogs. We have grown since we opened in 2012 and have long believed that our success is not just based on sales but also our community involvement, which is why we have been giving away this scholarship since 2019.
+          </p>
+          <p>
+            Winners will be announced in June. We encourage all qualifying students to apply! We wish every applicant much luck and success in pursuit of their entrepreneurial dreams. <strong class="text-brand-dark">Remember to dream big and often!</strong>
+          </p>
+        </div>
+
+        <!-- Sidebar: How to Apply -->
+        <div class="space-y-6">
+          <div class="bg-brand-cream rounded-2xl p-6 shadow-sm border border-gray-200">
+            <h3 class="font-display text-xl font-bold text-brand-dark mb-4 pb-2 border-b border-gray-300">How to Apply</h3>
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">Mail your completed application to the address below:</p>
+            <address class="not-italic text-gray-800 text-sm leading-relaxed font-semibold">
+              Gobble Doggs, LLC<br/>
+              Attn: Gobble Doggs Scholarship Committee<br/>
+              2025 Ridge Road<br/>
+              Homewood, IL 60430
+            </address>
+          </div>
+
+          <div class="bg-brand-dark text-white rounded-2xl p-6 shadow-sm">
+            <h3 class="font-display text-xl font-bold mb-4">Key Dates</h3>
+            <ul class="space-y-3 text-sm">
+              <li class="flex items-start gap-3">
+                <span class="text-brand-gold text-lg mt-0.5">📅</span>
+                <div><strong class="block">Deadline</strong><span class="text-gray-300">June 12, 2026 (postmarked)</span></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-gold text-lg mt-0.5">🏆</span>
+                <div><strong class="block">Winners Announced</strong><span class="text-gray-300">June 2026</span></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-gold text-lg mt-0.5">📖</span>
+                <div><strong class="block">Offered Since</strong><span class="text-gray-300">2019</span></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-brand-red text-white rounded-2xl p-6 shadow-sm">
+            <h3 class="font-display text-xl font-bold mb-2">Who Qualifies?</h3>
+            <ul class="text-sm text-red-100 space-y-2 mt-3">
+              <li class="flex items-start gap-2"><span class="text-white mt-1">✓</span>African American graduating high school senior</li>
+              <li class="flex items-start gap-2"><span class="text-white mt-1">✓</span>Innovative and forward-thinking</li>
+              <li class="flex items-start gap-2"><span class="text-white mt-1">✓</span>Passion for business &amp; entrepreneurship</li>
+              <li class="flex items-start gap-2"><span class="text-white mt-1">✓</span>College enrollment NOT required</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAST COVERAGE CTA -->
+  <section class="bg-brand-cream py-14">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h3 class="font-display text-2xl font-bold text-brand-dark mb-4">Gobble Doggs in the Community</h3>
+      <p class="text-gray-600 mb-6">Since 2019, Gobble Doggs has awarded thousands of dollars in scholarship funding to aspiring entrepreneurs. Read about our scholarship in the press.</p>
+      <a href="media.html" class="inline-block bg-brand-dark hover:bg-gray-800 text-white font-bold uppercase tracking-widest text-sm px-8 py-3 rounded-full transition-all">See Media Coverage</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-dark text-gray-400 py-10 text-center text-sm">
+    <div class="max-w-5xl mx-auto px-6">
+      <img src="./img/small.png" alt="Gobble Doggs" class="h-12 mx-auto mb-4 opacity-80"/>
+      <p class="mb-2">2025 Ridge Road, Homewood, Illinois 60430</p> <div style="text-align: center;">or</div>
+      <p class="mb-2">440 South LaSalle Street, Chicago, Illinois 60604</p>
+      <p class="mb-2"><a href="tel:3312341280" class="hover:text-white">331.234.1280</a> &nbsp;|&nbsp; <a href="mailto:info@gobbledoggs.com" class="hover:text-white">info@gobbledoggs.com</a></p>
+      <p class="mt-6 text-xs text-gray-600">© 2026 Gobble Doggs. All Rights Reserved. Designed by <a href="https://SiteCraft-Studio.com/" target="_blank" class="hover:text-gray-400 underline">SiteCraft Studio</a>.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', function(){
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

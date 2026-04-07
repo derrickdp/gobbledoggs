@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Media – Gobble Doggs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { red: '#c0392b', dark: '#1a1a1a', gold: '#d4a017', cream: '#faf6f0' },
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Lato', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Lato', sans-serif; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#c0392b; transition:width .3s; }
+    .nav-link:hover::after { width:100%; }
+    .nav-link { position:relative; }
+    .dropdown:hover .dropdown-menu { display:block; }
+    .media-link { transition: all .2s; }
+    .media-link:hover { transform: translateX(4px); }
+  </style>
+</head>
+<body class="bg-brand-cream text-brand-dark">
+
+  <!-- NAV -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="./img/small.png" alt="Gobble Doggs Logo" class="h-14 w-auto"/>
+      </a>
+      <ul class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest font-bold text-brand-dark">
+        <li><a href="about.html" class="nav-link hover:text-brand-red transition-colors">About Us</a></li>
+        <li class="dropdown relative">
+          <a href="menus.html" class="nav-link hover:text-brand-red transition-colors flex items-center gap-1">Menus <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg></a>
+          <ul class="dropdown-menu hidden absolute top-full left-0 bg-white shadow-xl rounded-md min-w-max py-2 border-t-2 border-brand-red">
+            <li><a href="menus.html" class="block px-5 py-2 text-sm hover:bg-brand-red hover:text-white transition-colors">Al a Carte Menu</a></li>
+            <li><a href="menus.html#catering" class="block px-5 py-2 text-sm hover:bg-brand-red hover:text-white transition-colors">Catering Menu</a></li>
+          </ul>
+        </li>
+        <li><a href="party-packages.html" class="nav-link hover:text-brand-red transition-colors">Party Packages</a></li>
+        <li><a href="scholarship.html" class="nav-link hover:text-brand-red transition-colors">Scholarship</a></li>
+        <li><a href="media.html" class="nav-link text-brand-red">Media</a></li>
+        <li><a href="contact.html" class="nav-link hover:text-brand-red transition-colors">Contact</a></li>
+      </ul>
+      <button id="menu-btn" class="md:hidden p-2 rounded" aria-label="Open menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 pb-4">
+      <ul class="flex flex-col gap-4 pt-4 text-sm uppercase tracking-widest font-bold text-brand-dark">
+        <li><a href="about.html" class="hover:text-brand-red">About Us</a></li>
+        <li><a href="menus.html" class="hover:text-brand-red">Al a Carte Menu</a></li>
+        <li><a href="menus.html#catering" class="hover:text-brand-red">Catering Menu</a></li>
+        <li><a href="party-packages.html" class="hover:text-brand-red">Party Packages</a></li>
+        <li><a href="scholarship.html" class="hover:text-brand-red">Scholarship</a></li>
+        <li><a href="media.html" class="text-brand-red">Media</a></li>
+        <li><a href="contact.html" class="hover:text-brand-red">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="relative bg-brand-dark text-white py-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background:repeating-linear-gradient(45deg, #c0392b 0, #c0392b 1px, transparent 0, transparent 50%) center/20px 20px;"></div>
+    <div class="relative z-10 text-center max-w-3xl mx-auto px-6">
+      <p class="text-brand-gold uppercase tracking-[.3em] text-xs font-bold mb-3">Press & Coverage</p>
+      <h1 class="font-display text-5xl md:text-6xl font-black drop-shadow-lg">Media</h1>
+    </div>
+  </section>
+  <div class="h-1 bg-gradient-to-r from-brand-red via-brand-gold to-brand-red"></div>
+
+  <!-- FEATURED COVERAGE -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="text-brand-red uppercase tracking-[.3em] text-xs font-bold mb-3 text-center">In The News</p>
+      <h2 class="font-display text-3xl md:text-4xl font-black text-center text-brand-dark mb-14">Gobble Doggs in the Press</h2>
+
+      <!-- Featured articles - 2020 highlighted -->
+      <div class="mb-10">
+        <h3 class="text-xs uppercase tracking-widest font-bold text-gray-400 mb-5 flex items-center gap-3"><span class="flex-1 h-px bg-gray-200"></span>2020<span class="flex-1 h-px bg-gray-200"></span></h3>
+        <div class="space-y-4">
+          <a href="https://rollingout.com/2020/10/25/annah-mitchell-is-providing-smiles-and-scholarships-with-gobble-doggs/" target="_blank" rel="noopener" class="media-link flex items-start gap-4 bg-brand-cream hover:bg-white border border-gray-200 hover:border-brand-red rounded-xl px-5 py-4 shadow-sm group">
+            <span class="text-brand-red mt-1 flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <p class="font-bold text-brand-dark group-hover:text-brand-red transition-colors text-sm leading-snug">Annah Mitchell is providing smiles and scholarships with Gobble Doggs</p>
+              <p class="text-xs text-gray-400 mt-1">Rolling Out — October 25, 2020</p>
+            </div>
+          </a>
+          <a href="https://www.fox32chicago.com/video/846613" target="_blank" rel="noopener" class="media-link flex items-start gap-4 bg-brand-cream hover:bg-white border border-gray-200 hover:border-brand-red rounded-xl px-5 py-4 shadow-sm group">
+            <span class="text-brand-red mt-1 flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <p class="font-bold text-brand-dark group-hover:text-brand-red transition-colors text-sm leading-snug">Lovin' Local: Gobble Doggs in Chicago</p>
+              <p class="text-xs text-gray-400 mt-1">Fox Chicago TV — September 2, 2020</p>
+            </div>
+          </a>
+          <a href="https://chicagodefender.com/gobble-doggs-scholarships-entrepreneurs/" target="_blank" rel="noopener" class="media-link flex items-start gap-4 bg-brand-cream hover:bg-white border border-gray-200 hover:border-brand-red rounded-xl px-5 py-4 shadow-sm group">
+            <span class="text-brand-red mt-1 flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <p class="font-bold text-brand-dark group-hover:text-brand-red transition-colors text-sm leading-snug">Gobble Doggs Gives out $5,000 in Scholarships for Entrepreneurial Teens</p>
+              <p class="text-xs text-gray-400 mt-1">Chicago Defender — August 26, 2020</p>
+            </div>
+          </a>
+          <a href="https://chicago.suntimes.com/2020/6/6/21282109/black-culture-week-african-american-business-owners-chicago" target="_blank" rel="noopener" class="media-link flex items-start gap-4 bg-brand-cream hover:bg-white border border-gray-200 hover:border-brand-red rounded-xl px-5 py-4 shadow-sm group">
+            <span class="text-brand-red mt-1 flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <p class="font-bold text-brand-dark group-hover:text-brand-red transition-colors text-sm leading-snug">Black business owners vow to support each other through pandemic, civil unrest</p>
+              <p class="text-xs text-gray-400 mt-1">Chicago Sun Times — June 6, 2020</p>
+            </div>
+          </a>
+          <a href="https://chicago.suntimes.com/2020/5/4/21241608/black-women-restaurant-food-truck-covid-19-coronavirus-gooble-dogs-soul-shack-lexington-betty" target="_blank" rel="noopener" class="media-link flex items-start gap-4 bg-brand-cream hover:bg-white border border-gray-200 hover:border-brand-red rounded-xl px-5 py-4 shadow-sm group">
+            <span class="text-brand-red mt-1 flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <p class="font-bold text-brand-dark group-hover:text-brand-red transition-colors text-sm leading-snug">African American business women refuse to lose to COVID-19</p>
+              <p class="text-xs text-gray-400 mt-1">Chicago Sun Times — May 4, 2020</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2019 -->
+      <div class="mb-10">
+        <h3 class="text-xs uppercase tracking-widest font-bold text-gray-400 mb-5 flex items-center gap-3"><span class="flex-1 h-px bg-gray-200"></span>2019<span class="flex-1 h-px bg-gray-200"></span></h3>
+        <div class="space-y-4">
+          <a href="https://www.dailyherald.com/submitted/20190531/gobble-doggs-awards-scholarships-to-aspiring-entrepreneurs-in-community" target="_blank" rel="noopener" class="media-link flex items-start gap-4 bg-brand-cream hover:bg-white border border-gray-200 hover:border-brand-red rounded-xl px-5 py-4 shadow-sm group">
+            <span class="text-brand-red mt-1 flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></span>
+            <div>
+              <p class="font-bold text-brand-dark group-hover:text-brand-red transition-colors text-sm leading-snug">Gobble Doggs awards scholarships to aspiring entrepreneurs in community</p>
+              <p class="text-xs text-gray-400 mt-1">Daily Herald — June 3, 2019</p>
+            </div>
+          </a>
+          <a href="https://www.chicagotribune.com/suburbs/aurora-beacon-news/opinion/ct-abn-crosby-tip-scholarships-st-0610-story.html" target="_blank" rel="noopener" class="media-link flex items-start gap-4 bg-brand-cream hover:bg-white border border-gray-200 hover:border-brand-red rounded-xl px-5 py-4 shadow-sm group">
+            <span class="text-brand-red mt-1 flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></span>
+            <div>
+              <p class="font-bold text-brand-dark group-hover:text-brand-red transition-colors text-sm leading-snug">An Aurora food truck owner is turning tips into scholarships</p>
+              <p class="text-xs text-gray-400 mt-1">The Beacon News — June 10, 2019</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2017 -->
+      <div class="mb-10">
+        <h3 class="text-xs uppercase tracking-widest font-bold text-gray-400 mb-5 flex items-center gap-3"><span class="flex-1 h-px bg-gray-200"></span>2017<span class="flex-1 h-px bg-gray-200"></span></h3>
+        <div class="space-y-4">
+          <a href="https://www.chicagotribune.com/suburbs/aurora-beacon-news/opinion/ct-abn-crosby-metra-hotdogs-st-0702-20170630-column.html" target="_blank" rel="noopener" class="media-link flex items-start gap-4 bg-brand-cream hover:bg-white border border-gray-200 hover:border-brand-red rounded-xl px-5 py-4 shadow-sm group">
+            <span class="text-brand-red mt-1 flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></span>
+            <div>
+              <p class="font-bold text-brand-dark group-hover:text-brand-red transition-colors text-sm leading-snug">Aurora woman hopes Metra riders will relish her hot dogs at downtown Chicago kiosk</p>
+              <p class="text-xs text-gray-400 mt-1">The Beacon News — June 30, 2017</p>
+            </div>
+          </a>
+          <a href="https://www.dnainfo.com/chicago/20170601/loop/gobble-doggs-hot-dog-truck-lasalle-street-metra-station-rock-island-line-trains" target="_blank" rel="noopener" class="media-link flex items-start gap-4 bg-brand-cream hover:bg-white border border-gray-200 hover:border-brand-red rounded-xl px-5 py-4 shadow-sm group">
+            <span class="text-brand-red mt-1 flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></span>
+            <div>
+              <p class="font-bold text-brand-dark group-hover:text-brand-red transition-colors text-sm leading-snug">LaSalle Street Metra Station Getting Turkey Dog Stand Gobble Doggs</p>
+              <p class="text-xs text-gray-400 mt-1">DNAInfo — June 1, 2017</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2016 -->
+      <div class="mb-10">
+        <h3 class="text-xs uppercase tracking-widest font-bold text-gray-400 mb-5 flex items-center gap-3"><span class="flex-1 h-px bg-gray-200"></span>2016<span class="flex-1 h-px bg-gray-200"></span></h3>
+        <div class="space-y-4">
+          <a href="https://www.youtube.com/watch?v=w7q2Unk-v8E" target="_blank" rel="noopener" class="media-link flex items-start gap-4 bg-brand-cream hover:bg-white border border-gray-200 hover:border-brand-red rounded-xl px-5 py-4 shadow-sm group">
+            <span class="text-brand-red mt-1 flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></span>
+            <div>
+              <p class="font-bold text-brand-dark group-hover:text-brand-red transition-colors text-sm leading-snug">Gobble Doggs talks voter registration — radio interview</p>
+              <p class="text-xs text-gray-400 mt-1">Mike Krauser News Radio 105.9 — October 25, 2016</p>
+            </div>
+          </a>
+          <a href="https://www.chicagotribune.com/suburbs/elgin-courier-news/ct-ecn-kane-foodtruck-voter-registration-st-1025-20161024-story.html" target="_blank" rel="noopener" class="media-link flex items-start gap-4 bg-brand-cream hover:bg-white border border-gray-200 hover:border-brand-red rounded-xl px-5 py-4 shadow-sm group">
+            <span class="text-brand-red mt-1 flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></span>
+            <div>
+              <p class="font-bold text-brand-dark group-hover:text-brand-red transition-colors text-sm leading-snug">Kane County clerk honors food truck owner's voter registration effort</p>
+              <p class="text-xs text-gray-400 mt-1">Chicago Tribune Courier News — October 24, 2016</p>
+            </div>
+          </a>
+          <a href="http://www.chicagotribune.com/suburbs/aurora-beacon-news/news/ct-abn-food-truck-voter-registration-st-1011-20161010-story.html" target="_blank" rel="noopener" class="media-link flex items-start gap-4 bg-brand-cream hover:bg-white border border-gray-200 hover:border-brand-red rounded-xl px-5 py-4 shadow-sm group">
+            <span class="text-brand-red mt-1 flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></span>
+            <div>
+              <p class="font-bold text-brand-dark group-hover:text-brand-red transition-colors text-sm leading-snug">Fox Valley food truck adds voter registration to its menu</p>
+              <p class="text-xs text-gray-400 mt-1">Chicago Tribune Beacon News — October 10, 2016</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2015 -->
+      <div>
+        <h3 class="text-xs uppercase tracking-widest font-bold text-gray-400 mb-5 flex items-center gap-3"><span class="flex-1 h-px bg-gray-200"></span>2015<span class="flex-1 h-px bg-gray-200"></span></h3>
+        <div class="space-y-4">
+          <a href="http://www.chicagotribune.com/suburbs/aurora-beacon-news/opinion/ct-abn-crosby-food-truck-st-0727-20150727-story.html" target="_blank" rel="noopener" class="media-link flex items-start gap-4 bg-brand-cream hover:bg-white border border-gray-200 hover:border-brand-red rounded-xl px-5 py-4 shadow-sm group">
+            <span class="text-brand-red mt-1 flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></span>
+            <div>
+              <p class="font-bold text-brand-dark group-hover:text-brand-red transition-colors text-sm leading-snug">Food truck serves up hot dogs, compassion</p>
+              <p class="text-xs text-gray-400 mt-1">Chicago Tribune Beacon News — July 25, 2015</p>
+            </div>
+          </a>
+          <a href="http://www.chicagotribune.com/suburbs/aurora-beacon-news/lifestyles/ct-abn-first-fridays-st-0902-20150901-story.html" target="_blank" rel="noopener" class="media-link flex items-start gap-4 bg-brand-cream hover:bg-white border border-gray-200 hover:border-brand-red rounded-xl px-5 py-4 shadow-sm group">
+            <span class="text-brand-red mt-1 flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></span>
+            <div>
+              <p class="font-bold text-brand-dark group-hover:text-brand-red transition-colors text-sm leading-snug">First Fridays in Aurora to feature art, music and a business opening</p>
+              <p class="text-xs text-gray-400 mt-1">Chicago Tribune Beacon News — September 1, 2015</p>
+            </div>
+          </a>
+          <a href="http://www.chicagotribune.com/suburbs/aurora-beacon-news/news/ct-abn-pop-up-st-0806-20150805-story.html" target="_blank" rel="noopener" class="media-link flex items-start gap-4 bg-brand-cream hover:bg-white border border-gray-200 hover:border-brand-red rounded-xl px-5 py-4 shadow-sm group">
+            <span class="text-brand-red mt-1 flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></span>
+            <div>
+              <p class="font-bold text-brand-dark group-hover:text-brand-red transition-colors text-sm leading-snug">Pop-up shop to be part of the First Fridays in Aurora</p>
+              <p class="text-xs text-gray-400 mt-1">Chicago Tribune Beacon News — August 5, 2015</p>
+            </div>
+          </a>
+          <a href="http://www.chicagotribune.com/suburbs/aurora-beacon-news/news/ct-abn-aurora-music-st-0726-20150724-story.html" target="_blank" rel="noopener" class="media-link flex items-start gap-4 bg-brand-cream hover:bg-white border border-gray-200 hover:border-brand-red rounded-xl px-5 py-4 shadow-sm group">
+            <span class="text-brand-red mt-1 flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></span>
+            <div>
+              <p class="font-bold text-brand-dark group-hover:text-brand-red transition-colors text-sm leading-snug">Free concerts to be held in downtown Aurora</p>
+              <p class="text-xs text-gray-400 mt-1">Chicago Tribune Beacon News — July 24, 2015</p>
+            </div>
+          </a>
+          <a href="http://www.chicagotribune.com/suburbs/aurora-beacon-news/news/ct-abn-aurora-weekend-st-0702-20150701-story.html" target="_blank" rel="noopener" class="media-link flex items-start gap-4 bg-brand-cream hover:bg-white border border-gray-200 hover:border-brand-red rounded-xl px-5 py-4 shadow-sm group">
+            <span class="text-brand-red mt-1 flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></span>
+            <div>
+              <p class="font-bold text-brand-dark group-hover:text-brand-red transition-colors text-sm leading-snug">Aurora's Fourth a two-day celebration this year</p>
+              <p class="text-xs text-gray-400 mt-1">Chicago Tribune Beacon News — July 1, 2015</p>
+            </div>
+          </a>
+          <a href="http://www.dailyherald.com/article/20150423/submitted/150429371/" target="_blank" rel="noopener" class="media-link flex items-start gap-4 bg-brand-cream hover:bg-white border border-gray-200 hover:border-brand-red rounded-xl px-5 py-4 shadow-sm group">
+            <span class="text-brand-red mt-1 flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></span>
+            <div>
+              <p class="font-bold text-brand-dark group-hover:text-brand-red transition-colors text-sm leading-snug">Grand opening set for downtown Aurora library</p>
+              <p class="text-xs text-gray-400 mt-1">Daily Herald — April 23, 2015</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-dark text-gray-400 py-10 text-center text-sm">
+    <div class="max-w-5xl mx-auto px-6">
+      <img src="./img/small.png" alt="Gobble Doggs" class="h-12 mx-auto mb-4 opacity-80"/>
+      <p class="mb-2">2025 Ridge Road, Homewood, Illinois 60430</p> <div style="text-align: center;">or</div>
+      <p class="mb-2">440 South LaSalle Street, Chicago, Illinois 60604</p>
+      <p class="mb-2"><a href="tel:3312341280" class="hover:text-white">331.234.1280</a> &nbsp;|&nbsp; <a href="mailto:info@gobbledoggs.com" class="hover:text-white">info@gobbledoggs.com</a></p>
+      <p class="mt-6 text-xs text-gray-600">© 2026 Gobble Doggs. All Rights Reserved. Designed by <a href="https://SiteCraft-Studio.com/" target="_blank" class="hover:text-gray-400 underline">SiteCraft Studio</a>.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', function(){
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

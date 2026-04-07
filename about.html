@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us – Gobble Doggs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { red: '#c0392b', dark: '#1a1a1a', gold: '#d4a017', cream: '#faf6f0' },
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Lato', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Lato', sans-serif; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#c0392b; transition:width .3s; }
+    .nav-link:hover::after { width:100%; }
+    .nav-link { position:relative; }
+    .dropdown:hover .dropdown-menu { display:block; }
+    .card-hover { transition: transform .3s, box-shadow .3s; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,.15); }
+  </style>
+</head>
+<body class="bg-brand-cream text-brand-dark">
+
+  <!-- NAV -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="./img/small.png" alt="Gobble Doggs Logo" class="h-14 w-auto"/>
+      </a>
+      <ul class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest font-bold text-brand-dark">
+        <li><a href="about.html" class="nav-link text-brand-red">About Us</a></li>
+        <li class="dropdown relative">
+          <a href="menus.html" class="nav-link hover:text-brand-red transition-colors flex items-center gap-1">Menus <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg></a>
+          <ul class="dropdown-menu hidden absolute top-full left-0 bg-white shadow-xl rounded-md min-w-max py-2 border-t-2 border-brand-red">
+            <li><a href="menus.html" class="block px-5 py-2 text-sm hover:bg-brand-red hover:text-white transition-colors">Al a Carte Menu</a></li>
+            <li><a href="menus.html#catering" class="block px-5 py-2 text-sm hover:bg-brand-red hover:text-white transition-colors">Catering Menu</a></li>
+          </ul>
+        </li>
+        <li><a href="party-packages.html" class="nav-link hover:text-brand-red transition-colors">Party Packages</a></li>
+        <li><a href="scholarship.html" class="nav-link hover:text-brand-red transition-colors">Scholarship</a></li>
+        <li><a href="media.html" class="nav-link hover:text-brand-red transition-colors">Media</a></li>
+        <li><a href="contact.html" class="nav-link hover:text-brand-red transition-colors">Contact</a></li>
+      </ul>
+      <button id="menu-btn" class="md:hidden p-2 rounded" aria-label="Open menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 pb-4">
+      <ul class="flex flex-col gap-4 pt-4 text-sm uppercase tracking-widest font-bold text-brand-dark">
+        <li><a href="about.html" class="text-brand-red">About Us</a></li>
+        <li><a href="menus.html" class="hover:text-brand-red">Al a Carte Menu</a></li>
+        <li><a href="menus.html#catering" class="hover:text-brand-red">Catering Menu</a></li>
+        <li><a href="party-packages.html" class="hover:text-brand-red">Party Packages</a></li>
+        <li><a href="scholarship.html" class="hover:text-brand-red">Scholarship</a></li>
+        <li><a href="media.html" class="hover:text-brand-red">Media</a></li>
+        <li><a href="contact.html" class="hover:text-brand-red">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="relative bg-brand-dark text-white py-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-30" style="background-image:url('./img/chicago-dogg.jpg'); background-size:cover; background-position:center;"></div>
+    <div class="relative z-10 text-center max-w-3xl mx-auto px-6">
+      <p class="text-brand-gold uppercase tracking-[.3em] text-xs font-bold mb-3">Our Story</p>
+      <h1 class="font-display text-5xl md:text-6xl font-black drop-shadow-lg">About Gobble Doggs</h1>
+    </div>
+  </section>
+  <div class="h-1 bg-gradient-to-r from-brand-red via-brand-gold to-brand-red"></div>
+
+  <!-- ABOUT CONTENT -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-start">
+      <div>
+        <img src="./img/chicago-dogg.jpg" alt="Chicago Dogg" class="w-full rounded-2xl shadow-xl object-cover aspect-[4/3]"/>
+      </div>
+      <div class="space-y-5 text-gray-700 leading-relaxed text-base">
+        <p>
+          <span class="text-5xl font-display font-black text-brand-red float-left leading-none mr-2 mt-1">G</span>obble Doggs is a family-owned catering business in the Chicagoland area that specializes in serving turkey hot dogs with a variety of delicious gourmet toppings. Every Gobble Doggs is prepared fresh. Clients can choose from our signature sellers or one of our Gobble Doggs specialists can work to create a Gobble Doggs special to your event.
+        </p>
+        <p>
+          Gobble Doggs started in 2012 premiering at local festivals to accommodate those who enjoy traditional American favorites but prefer a healthier option to pork and beef hot dogs, or who just enjoyed the taste of a good turkey dog. With the growing trend of people becoming more health conscious about what they're putting in their bodies, Gobble Doggs is ideal in offering a service, especially for children's parties, that will provide food that our customers can feel good about serving.
+        </p>
+        <p>
+          Freshness is paramount to the Gobble Doggs brand so every one is guaranteed to be served with fresh ingredients, quality turkey products and the freshest bread. Whether you enjoy our signature Gobble Doggs or prefer to create your own, Gobble Doggs is sure to turn up your next event.
+        </p>
+        <p class="font-semibold text-brand-dark">Schedule Gobble Doggs to cater your next event today!</p>
+        <div class="pt-4">
+          <a href="contact.html" class="inline-block bg-brand-red hover:bg-red-800 text-white font-bold uppercase tracking-widest text-sm px-8 py-3 rounded-full transition-all shadow-md">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOD GALLERY -->
+  <section class="bg-brand-cream py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h3 class="font-display text-2xl text-center font-bold text-brand-dark mb-10">A Taste of What We Offer</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <a href="./img/chili-dogg.jpg" target="_blank" class="card-hover rounded-xl overflow-hidden aspect-square shadow-md">
+          <img src="./img/chili-dogg-150x150.jpg" alt="Chili Dogg" class="w-full h-full object-cover"/>
+        </a>
+        <a href="./img/egg-omelette-1.jpg" target="_blank" class="card-hover rounded-xl overflow-hidden aspect-square shadow-md">
+          <img src="./img/egg-omelette-1-150x150.jpg" alt="Egg Omelette" class="w-full h-full object-cover"/>
+        </a>
+        <a href="./img/Breakfast-pancake-muffin-scaled.jpg" target="_blank" class="card-hover rounded-xl overflow-hidden aspect-square shadow-md">
+          <img src="./img/Breakfast-pancake-muffin-scaled-150x150.jpg" alt="Breakfast Pancake Muffin" class="w-full h-full object-cover"/>
+        </a>
+        <a href="./img/savory-dogg.jpg" target="_blank" class="card-hover rounded-xl overflow-hidden aspect-square shadow-md">
+          <img src="./img/savory-dogg-150x150.jpg" alt="Savory Dogg" class="w-full h-full object-cover"/>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="bg-brand-red text-white py-14 text-center">
+    <div class="max-w-2xl mx-auto px-6">
+      <h3 class="font-display text-3xl md:text-4xl font-bold mb-4">Want More Information About Our Packages?</h3>
+      <p class="text-red-100 mb-8 text-lg">Let's talk about how Gobble Doggs can make your next event unforgettable.</p>
+      <a href="contact.html" class="bg-white text-brand-red hover:bg-gray-100 font-bold uppercase tracking-widest text-sm px-10 py-4 rounded-full transition-all shadow-lg inline-block">More Information</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-dark text-gray-400 py-10 text-center text-sm">
+    <div class="max-w-5xl mx-auto px-6">
+      <img src="./img/small.png" alt="Gobble Doggs" class="h-12 mx-auto mb-4 opacity-80"/>
+      <p class="mb-2">2025 Ridge Road, Homewood, Illinois 60430</p> <div style="text-align: center;">or</div>
+      <p class="mb-2">440 South LaSalle Street, Chicago, Illinois 60604</p>
+      <p class="mb-2"><a href="tel:3312341280" class="hover:text-white">331.234.1280</a> &nbsp;|&nbsp; <a href="mailto:info@gobbledoggs.com" class="hover:text-white">info@gobbledoggs.com</a></p>
+      <p class="mt-6 text-xs text-gray-600">© 2026 Gobble Doggs. All Rights Reserved. Designed by <a href="https://SiteCraft-Studio.com/" target="_blank" class="hover:text-gray-400 underline">SiteCraft Studio</a>.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', function(){
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

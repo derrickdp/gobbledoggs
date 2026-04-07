@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menus – Gobble Doggs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { red: '#c0392b', dark: '#1a1a1a', gold: '#d4a017', cream: '#faf6f0' },
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Lato', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Lato', sans-serif; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#c0392b; transition:width .3s; }
+    .nav-link:hover::after { width:100%; }
+    .nav-link { position:relative; }
+    .dropdown:hover .dropdown-menu { display:block; }
+    .menu-item { border-left: 4px solid #c0392b; }
+  </style>
+</head>
+<body class="bg-brand-cream text-brand-dark">
+
+  <!-- NAV -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="./img/small.png" alt="Gobble Doggs Logo" class="h-14 w-auto"/>
+      </a>
+      <ul class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest font-bold text-brand-dark">
+        <li><a href="about.html" class="nav-link hover:text-brand-red transition-colors">About Us</a></li>
+        <li class="dropdown relative">
+          <a href="menus.html" class="nav-link text-brand-red flex items-center gap-1">Menus <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg></a>
+          <ul class="dropdown-menu hidden absolute top-full left-0 bg-white shadow-xl rounded-md min-w-max py-2 border-t-2 border-brand-red">
+            <li><a href="menus.html" class="block px-5 py-2 text-sm hover:bg-brand-red hover:text-white transition-colors">Al a Carte Menu</a></li>
+            <li><a href="menus.html#catering" class="block px-5 py-2 text-sm hover:bg-brand-red hover:text-white transition-colors">Catering Menu</a></li>
+          </ul>
+        </li>
+        <li><a href="party-packages.html" class="nav-link hover:text-brand-red transition-colors">Party Packages</a></li>
+        <li><a href="scholarship.html" class="nav-link hover:text-brand-red transition-colors">Scholarship</a></li>
+        <li><a href="media.html" class="nav-link hover:text-brand-red transition-colors">Media</a></li>
+        <li><a href="contact.html" class="nav-link hover:text-brand-red transition-colors">Contact</a></li>
+      </ul>
+      <button id="menu-btn" class="md:hidden p-2 rounded" aria-label="Open menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 pb-4">
+      <ul class="flex flex-col gap-4 pt-4 text-sm uppercase tracking-widest font-bold text-brand-dark">
+        <li><a href="about.html" class="hover:text-brand-red">About Us</a></li>
+        <li><a href="menus.html" class="text-brand-red">Al a Carte Menu</a></li>
+        <li><a href="menus.html#catering" class="hover:text-brand-red">Catering Menu</a></li>
+        <li><a href="party-packages.html" class="hover:text-brand-red">Party Packages</a></li>
+        <li><a href="scholarship.html" class="hover:text-brand-red">Scholarship</a></li>
+        <li><a href="media.html" class="hover:text-brand-red">Media</a></li>
+        <li><a href="contact.html" class="hover:text-brand-red">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="relative bg-brand-dark text-white py-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-25" style="background-image:url('./img/Chi-Style-Gobble-Doggs-scaled.jpg'); background-size:cover; background-position:center;"></div>
+    <div class="relative z-10 text-center max-w-3xl mx-auto px-6">
+      <p class="text-brand-gold uppercase tracking-[.3em] text-xs font-bold mb-3">Gobble Eats</p>
+      <h1 class="font-display text-5xl md:text-6xl font-black drop-shadow-lg">Our Menus</h1>
+    </div>
+  </section>
+  <div class="h-1 bg-gradient-to-r from-brand-red via-brand-gold to-brand-red"></div>
+
+  <!-- TAB NAVIGATION -->
+  <div class="bg-white border-b border-gray-200 sticky top-20 z-40">
+    <div class="max-w-5xl mx-auto px-6 flex gap-0">
+      <a href="#alacarte" class="px-6 py-4 text-sm font-bold uppercase tracking-wider text-brand-red border-b-2 border-brand-red">Al a Carte Menu</a>
+      <a href="#catering" class="px-6 py-4 text-sm font-bold uppercase tracking-wider text-gray-500 hover:text-brand-red border-b-2 border-transparent hover:border-brand-red transition-colors">Catering Menu</a>
+    </div>
+  </div>
+
+  <!-- AL A CARTE MENU -->
+  <section id="alacarte" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="text-brand-red uppercase tracking-[.3em] text-xs font-bold mb-3">Fresh & Delicious</p>
+        <h2 class="font-display text-4xl md:text-5xl font-black text-brand-dark mb-4">Gobble Doggs</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto text-base leading-relaxed">Freshness is paramount to the Gobble Doggs brand so everyone is guaranteed to be served with fresh ingredients, quality turkey products and the freshest bread.</p>
+      </div>
+
+      <!-- Signature Items -->
+      <div class="mb-14">
+        <h3 class="font-display text-2xl font-bold text-brand-dark mb-2 pb-2 border-b-2 border-brand-gold">Enjoy a Variety of Gobble Doggs</h3>
+        <p class="text-gray-500 text-sm mb-8">Choose from one of our signature Gobble Doggs or build your own using our quality products.</p>
+        <div class="space-y-6">
+          <div class="menu-item bg-brand-cream rounded-r-xl pl-5 pr-6 py-5 shadow-sm">
+            <div class="flex items-start gap-4">
+              <img src="./img/Chi-Style-Gobble-Doggs-scaled-150x150.jpg" alt="Chi-Style" class="w-20 h-20 rounded-lg object-cover flex-shrink-0"/>
+              <div>
+                <h4 class="font-display text-xl font-bold text-brand-dark">Chi-Style Gobble Doggs</h4>
+                <p class="text-gray-600 text-sm mt-1">Enjoy a classic, colorful and fully loaded Chi-Style Gobble Doggs with yellow mustard, spear pickle, tomato wedges, neon green pickle relish, onions, sport peppers, and a dash of celery salt. Who can resist this Chicago classic?</p>
+              </div>
+            </div>
+          </div>
+          <div class="menu-item bg-brand-cream rounded-r-xl pl-5 pr-6 py-5 shadow-sm">
+            <div class="flex items-start gap-4">
+              <img src="./img/chili-dogg-150x150.jpg" alt="Chili Willy" class="w-20 h-20 rounded-lg object-cover flex-shrink-0"/>
+              <div>
+                <h4 class="font-display text-xl font-bold text-brand-dark">Chili Willy Gobble Doggs</h4>
+                <p class="text-gray-600 text-sm mt-1">Enjoy this old time favorite and American classic with a flavorful layer of homemade turkey chili atop, a Gobble Doggs, with a squirt of mustard, sprinkled with cheddar cheese, and onions. Each Chili Willy Gobble Doggs is served piping hot for your enjoyment.</p>
+              </div>
+            </div>
+          </div>
+          <div class="menu-item bg-brand-cream rounded-r-xl pl-5 pr-6 py-5 shadow-sm">
+            <div class="flex items-start gap-4">
+              <img src="./img/savory-dogg-150x150.jpg" alt="Savory Dogg" class="w-20 h-20 rounded-lg object-cover flex-shrink-0"/>
+              <div>
+                <h4 class="font-display text-xl font-bold text-brand-dark">Savory Gobble Doggs</h4>
+                <p class="text-gray-600 text-sm mt-1">This Gobble Doggs original festival favorite is loaded with sautéed garlic and onions, Parmesan and cheddar cheese, turkey bacon bits and a squirt of mustard. An undeniable taste that will win you over.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Veggie Option -->
+      <div class="mb-14">
+        <h3 class="font-display text-2xl font-bold text-brand-dark mb-6 pb-2 border-b-2 border-green-500">Veggie Option</h3>
+        <div class="menu-item bg-green-50 rounded-r-xl pl-5 pr-6 py-5 shadow-sm" style="border-color:#22c55e">
+          <h4 class="font-display text-xl font-bold text-brand-dark">Veggie Gobble Doggs</h4>
+          <p class="text-gray-600 text-sm mt-1">Enjoy our signature veggie doggs option on a wheat bun with shredded carrots, avocados, tomato wedges and red onions, in a creamy light ranch dressing. Also, great with turkey doggs. Whatever your "doggs" choice, it's sure to delight.</p>
+        </div>
+      </div>
+
+      <!-- Other Favorites -->
+      <div>
+        <h3 class="font-display text-2xl font-bold text-brand-dark mb-6 pb-2 border-b-2 border-brand-gold">Enjoy Other Gobble Dogg Favorites</h3>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div class="menu-item bg-brand-cream rounded-r-xl pl-5 pr-5 py-4 shadow-sm">
+            <h4 class="font-bold text-brand-dark">BLT Gobble Doggs</h4>
+            <p class="text-gray-600 text-sm mt-1">Shredded lettuce, tomatoes, turkey bacon with a delicious creamy Chipotle sauce</p>
+          </div>
+          <div class="menu-item bg-brand-cream rounded-r-xl pl-5 pr-5 py-4 shadow-sm">
+            <h4 class="font-bold text-brand-dark">California Gobble Doggs</h4>
+            <p class="text-gray-600 text-sm mt-1">Fresh pico de gallo, avocado and a splash of lime</p>
+          </div>
+          <div class="menu-item bg-brand-cream rounded-r-xl pl-5 pr-5 py-4 shadow-sm">
+            <h4 class="font-bold text-brand-dark">Brenapple Gobble Doggs</h4>
+            <p class="text-gray-600 text-sm mt-1">Brie cheese, slice of green apple and fig marmalade</p>
+          </div>
+          <div class="menu-item bg-brand-cream rounded-r-xl pl-5 pr-5 py-4 shadow-sm">
+            <h4 class="font-bold text-brand-dark">Gobbleroni and Cheese Gobble Doggs</h4>
+            <p class="text-gray-600 text-sm mt-1">Macaroni and cheese made with cheddar, monterrey, colby and pepper jack cheese sprinkled with turkey bacon</p>
+          </div>
+          <div class="menu-item bg-brand-cream rounded-r-xl pl-5 pr-5 py-4 shadow-sm sm:col-span-2">
+            <h4 class="font-bold text-brand-dark">Thanksgiving Gobble Doggs <span class="text-brand-red text-xs font-normal ml-2">(Seasonal)</span></h4>
+            <p class="text-gray-600 text-sm mt-1">Turkey stuffing, turkey gravy and craisins</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="h-1 bg-gradient-to-r from-brand-red via-brand-gold to-brand-red"></div>
+
+  <!-- CATERING MENU -->
+  <section id="catering" class="py-20 bg-brand-cream">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="text-brand-red uppercase tracking-[.3em] text-xs font-bold mb-3">Full Service Catering</p>
+        <h2 class="font-display text-4xl md:text-5xl font-black text-brand-dark mb-4">Catering Menu</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Perfect for events of all sizes — from intimate gatherings to large corporate functions.</p>
+      </div>
+
+      <!-- Breakfast -->
+      <div class="bg-white rounded-2xl shadow-md p-8 mb-10">
+        <h3 class="font-display text-2xl font-bold text-brand-dark mb-6 pb-2 border-b-2 border-brand-gold flex items-center gap-3">
+          <span class="text-3xl">🍳</span> Breakfast Menu
+        </h3>
+        <div class="space-y-6 text-gray-700">
+          <div>
+            <h4 class="font-bold text-brand-dark text-base">Egg Omelet Muffins <span class="text-gray-400 font-normal text-sm">— Full sized muffin or Bite-sized muffin</span></h4>
+            <p class="text-xs text-green-600 font-semibold uppercase tracking-wide mt-0.5 mb-1">Vegetarian</p>
+            <ul class="text-sm text-gray-600 list-disc list-inside space-y-1 ml-2">
+              <li>Eggs, cheddar cheese, green peppers, red peppers, yellow peppers, mushrooms and white onions</li>
+              <li>Eggs and cheddar cheese</li>
+            </ul>
+            <p class="text-xs text-gray-500 font-semibold uppercase tracking-wide mt-2 mb-1">With Turkey Sausage or Turkey Bacon</p>
+            <ul class="text-sm text-gray-600 list-disc list-inside space-y-1 ml-2">
+              <li>Eggs, turkey sausage, cheddar cheese, green peppers, red peppers, yellow peppers, mushrooms and white onions</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-dark text-base">Pancake Muffins <span class="text-gray-400 font-normal text-sm">— Full sized muffin or Bite-sized muffin</span></h4>
+            <p class="text-xs text-green-600 font-semibold uppercase tracking-wide mt-0.5 mb-1">Vegetarian</p>
+            <ul class="text-sm text-gray-600 list-disc list-inside space-y-1 ml-2">
+              <li>Pancake only</li>
+              <li>Pancake and scrambled eggs w/cheddar cheese</li>
+            </ul>
+            <p class="text-xs text-gray-500 font-semibold uppercase tracking-wide mt-2 mb-1">With Turkey Sausage or Turkey Bacon</p>
+            <ul class="text-sm text-gray-600 list-disc list-inside space-y-1 ml-2">
+              <li>Pancake and turkey bacon</li>
+              <li>Pancake and turkey sausage</li>
+              <li>Pancake, turkey sausage and bacon</li>
+              <li>Pancake, scrambled eggs w/cheddar cheese and turkey sausage</li>
+              <li>Pancake, scrambled eggs w/cheddar cheese and turkey bacon</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-dark text-base">Gobble Doggs Power Breakfast Sandwiches</h4>
+            <p class="text-xs text-green-600 font-semibold uppercase tracking-wide mt-0.5 mb-1">Vegetarian Options Available</p>
+            <ul class="text-sm text-gray-600 list-disc list-inside space-y-1 ml-2">
+              <li>Freshly scrambled eggs, cheddar cheese on an English muffin</li>
+              <li>Freshly scrambled eggs, cheddar cheese, tomato, spinach and avocado on an English muffin</li>
+              <li>Freshly scrambled eggs, cheddar cheese, turkey bacon on an English muffin</li>
+              <li>Freshly scrambled eggs, cheddar cheese and turkey sausage on an English muffin</li>
+            </ul>
+            <p class="text-sm text-gray-500 mt-2 italic">Avocado, tomato and spinach available on any breakfast sandwiches. Egg whites substitute available for all egg products.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-dark text-base">Breakfast Casserole</h4>
+            <p class="text-sm text-gray-600">Layers of scrambled eggs, spinach, onions, mushrooms, crumbled turkey sausage, hash browns, topped with cheddar cheese and salsa sauce</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-dark text-base">Whipping Cream Pound Cake Slices</h4>
+            <p class="text-sm text-gray-600">Buttery pound cake with option of sprinkled confectioners sugar</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-dark text-base">Fruit Medley</h4>
+            <p class="text-sm text-gray-600">Seasonal Fruits</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lunch & Dinner -->
+      <div class="bg-white rounded-2xl shadow-md p-8 mb-10">
+        <h3 class="font-display text-2xl font-bold text-brand-dark mb-6 pb-2 border-b-2 border-brand-red flex items-center gap-3">
+          <span class="text-3xl">🌭</span> Lunch &amp; Dinner — Gobble Doggs
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-4 text-sm text-gray-700">
+          <div class="menu-item pl-4 py-2">
+            <span class="font-semibold text-brand-dark">Classic Gobble Doggs</span><br/>Turkey hot dog, mustard, ketchup and relish
+          </div>
+          <div class="menu-item pl-4 py-2">
+            <span class="font-semibold text-brand-dark">Chi-Style Gobble Doggs</span><br/>Turkey hot dog, tomato, pickle spear, onions, relish, sport pepper and celery salt
+          </div>
+          <div class="menu-item pl-4 py-2">
+            <span class="font-semibold text-brand-dark">Chili Willy Gobble Doggs</span><br/>Turkey hot dog, turkey chili, onions and cheddar cheese
+          </div>
+          <div class="menu-item pl-4 py-2">
+            <span class="font-semibold text-brand-dark">Savory Gobble Doggs</span><br/>Turkey hot dog, sautéed onions and garlic, cheddar and parmesan cheese and turkey bacon
+          </div>
+          <div class="menu-item pl-4 py-2">
+            <span class="font-semibold text-brand-dark">Pulled Turkey Gobble Doggs</span><br/>Turkey hot dog, mustard, pulled turkey and pickle spear
+          </div>
+          <div class="menu-item pl-4 py-2">
+            <span class="font-semibold text-brand-dark">BLT Gobble Doggs</span><br/>Shredded lettuce, tomatoes, turkey bacon and Chipotle sauce
+          </div>
+        </div>
+        <p class="text-sm text-gray-400 mt-4 italic">Veggie Gobble Doggs available upon request</p>
+      </div>
+
+      <!-- Burgers & Sides -->
+      <div class="bg-white rounded-2xl shadow-md p-8 mb-10">
+        <h3 class="font-display text-2xl font-bold text-brand-dark mb-6 pb-2 border-b-2 border-brand-gold flex items-center gap-3">
+          <span class="text-3xl">🍔</span> Gobble Burgers
+        </h3>
+        <div class="space-y-3 text-sm text-gray-700 mb-8">
+          <div class="menu-item pl-4 py-2">
+            <span class="font-semibold text-brand-dark">Classic Gobble Burgers</span><br/>Turkey burger, mustard, ketchup, lettuce, tomato and pickle
+          </div>
+          <div class="menu-item pl-4 py-2">
+            <span class="font-semibold text-brand-dark">Spinach Gobble Burgers</span><br/>Spinach turkey burger, lemon mayo and tomato
+          </div>
+        </div>
+        <p class="text-sm text-gray-500 mb-4">Avocado, Cheese and Turkey Bacon available on any Gobble Burgers. <em>Veggie burgers available for additional $1.</em></p>
+        <div class="menu-item pl-4 py-2">
+          <span class="font-semibold text-brand-dark">Gluten Free Corn Bites</span><br/>Bite sized corn muffins with pieces of southwestern corn, onions and cheddar cheese with turkey hot dogs
+        </div>
+      </div>
+
+      <!-- Sides -->
+      <div class="bg-white rounded-2xl shadow-md p-8">
+        <h3 class="font-display text-2xl font-bold text-brand-dark mb-6 pb-2 border-b-2 border-brand-gold flex items-center gap-3">
+          <span class="text-3xl">🥗</span> Gobble Doggs Sides
+        </h3>
+        <ul class="space-y-3 text-sm text-gray-700">
+          <li class="menu-item pl-4 py-2"><span class="font-semibold text-brand-dark">Cup of Turkey Chili Soup</span> — Turkey chili, cheddar cheese and onions with option of cornbread</li>
+          <li class="menu-item pl-4 py-2"><span class="font-semibold text-brand-dark">Individual Miss Vickie's Brand Chips</span></li>
+          <li class="menu-item pl-4 py-2"><span class="font-semibold text-brand-dark">Individual Coleslaw</span></li>
+          <li class="menu-item pl-4 py-2"><span class="font-semibold text-brand-dark">Individual Potato Salad</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-dark text-white py-14 text-center">
+    <div class="max-w-2xl mx-auto px-6">
+      <h3 class="font-display text-3xl font-bold mb-4">Ready to Cater Your Event?</h3>
+      <p class="text-gray-300 mb-8">Contact us today and let's create the perfect menu for your occasion.</p>
+      <a href="contact.html" class="bg-brand-red hover:bg-red-700 text-white font-bold uppercase tracking-widest text-sm px-10 py-4 rounded-full transition-all shadow-lg inline-block">Get In Touch</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-dark text-gray-400 py-10 text-center text-sm">
+    <div class="max-w-5xl mx-auto px-6">
+      <img src="./img/small.png" alt="Gobble Doggs" class="h-12 mx-auto mb-4 opacity-80"/>
+      <p class="mb-2">2025 Ridge Road, Homewood, Illinois 60430</p> <div style="text-align: center;">or</div>
+      <p class="mb-2">440 South LaSalle Street, Chicago, Illinois 60604</p>
+      <p class="mb-2"><a href="tel:3312341280" class="hover:text-white">331.234.1280</a> &nbsp;|&nbsp; <a href="mailto:info@gobbledoggs.com" class="hover:text-white">info@gobbledoggs.com</a></p>
+      <p class="mt-6 text-xs text-gray-600">© 2026 Gobble Doggs. All Rights Reserved. Designed by <a href="https://SiteCraft-Studio.com/" target="_blank" class="hover:text-gray-400 underline">SiteCraft Studio</a>.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', function(){
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
